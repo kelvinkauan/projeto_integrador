@@ -7,10 +7,10 @@ class Connection {
 
     // faz conexao com o banco de dados
 
-    private static $host     = "localhost";
-    private static $dbname   = "projeto_integrador_bkm";
-    private static $user     = "root";
-    private static $password = "password#22";
+    private static $host     = "localhost"; // o nome do host 
+    private static $dbname   = "projeto_integrador_bkm"; // conectar com o banco 
+    private static $user     = "root"; // usuario 
+    private static $password = "password#22"; // senha 
 
     private static ?PDO $conn = null;
 
