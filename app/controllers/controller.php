@@ -8,6 +8,7 @@
                 call_user_func($useCase);
             
             } else {
+                
                 throw new Exception("O caso de uso chamado não existe");
             }
 
@@ -15,9 +16,9 @@
 
         public static function loadView(string $path, array $data = null){
 
-            extract($data); //pesquisar sobre!
+            extract($data); 
             
-            $caminho = __DIR__ . "/../views/" . $path;
+            $caminho = __DIR__ . "/../view/" . $path;
        
             if(file_exists($caminho)){
                  require $caminho;

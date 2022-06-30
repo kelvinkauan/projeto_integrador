@@ -5,12 +5,12 @@
 class Connection {
 
 
-    // faz conexao com o banco de dados
+    // connection.php faz a conexao com o banco de dados, primeiro cria as atribuitos 
 
-    private static $host     = "localhost"; // o nome do host 
-    private static $dbname   = "projeto_integrador_bkm"; // conectar com o banco 
-    private static $user     = "root"; // usuario 
-    private static $password = "password#22"; // senha 
+    private static $host     = "localhost"; // o nome do localhost do ambiente;  
+    private static $dbname   = "projeto_integrador_bkm"; // nome da bd que irá usar;
+    private static $user     = "root"; // nome usuario;
+    private static $password = "240103"; //a senha do ambiente;
 
     private static ?PDO $conn = null;
 
@@ -19,11 +19,12 @@ class Connection {
         if(self::$conn == null){
 
             try {
-                self::$conn = new PDO("mysql:host=".self::$host.";dbname=".self::$dbname, 
+                self::$conn = new PDO("mysql:host=".self::$host.
+                "dbname=".self::$dbname, 
                 self::$user, 
                 self::$password);
 
-                self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               //self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             } catch(Exception $e) {
                 print("Erro ao conectar com o banco de dados");
